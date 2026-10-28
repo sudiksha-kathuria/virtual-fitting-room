@@ -182,3 +182,7 @@ Backend and frontend setup will be added in their phases.
 
 - Never commit `.env` files or AWS or Google keys
 - Keys live only in Render environment variables
+
+## Contributors
+
+Sudiksha Kathuria
