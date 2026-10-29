@@ -1,5 +1,5 @@
 from foundations.conv2d import conv2d
-from tests.helpers import read_grid
+from tests.helper import read_grid
 
 def main():
     image = read_grid("image")
