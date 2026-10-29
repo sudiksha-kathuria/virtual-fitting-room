@@ -63,7 +63,7 @@ The backend never receives video frames. It only handles login and saved files.
 | Frontend | React, Vite, TypeScript |
 | Styling | CSS Modules and CSS variables |
 | Animation | Framer Motion |
-| Rendering | PixiJS (WebGL) |
+| Rendering | PixiJS (2D) and Three.js (3D) |
 | Backend | FastAPI (Python) |
 | Auth | Google Identity Services |
 | Database | PostgreSQL on Amazon RDS |
