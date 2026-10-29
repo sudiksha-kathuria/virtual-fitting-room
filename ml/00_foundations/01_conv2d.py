@@ -16,6 +16,22 @@ def conv2d(image,kernel, padding=0, stride=1):
             output[row , col] = np.sum(patch * kernel)
     return output
 
+def conv2d_multi(image,kernels): 
+    #for coloured images, the previous is the base cuz its for black and white
+    total_filters = kernels.shape[0]
+    total_channels = image.shape[0]
+    img_h = image.shape[1]
+    img_w = image.shape[2]
+    kernel_h = kernels.shape[2]
+    kernels_w = kernels.shape[3]
+    output_h = img_h - kernels_h + 1
+    output_w = img_w - kernels_w + 1
+    output = np.zeros(total_filters, output_h, output_w)
+    for f in range(total_filters):
+        for c in range(total_channels):
+            output[f] = output[f] + conv2d(image[c], kernels[f,c])
+    return output
+
 def read_grid(name):
     print(f"Enter {name}, one row at a time with numbers separated by spaces")
     print("Press Enter when one row is done")
@@ -27,7 +43,7 @@ def read_grid(name):
         rows.append([float(x) for x in line.split()])
     return np.array(rows)
 
-if __name__ == "__main__":
+def test_single():
     image = read_grid("image")
     kernel = read_grid("kernel")
     padding = int(input("Padding: "))
@@ -35,3 +51,25 @@ if __name__ == "__main__":
     result = conv2d(image,kernel,padding, stride)
     print(result)
     print(result.shape)
+
+def test_multi():
+    base = np.array( [
+        [0,0,9,9,9],
+        [0,0,9,9,9],
+        [0,0,9,9,9],
+        [0,0,9,9,9],
+        [0,0,9,9,9]
+    ])
+    image = np.stack([base,base,base])
+    vertical = np.array([[-1,0,1],[-1,0,1],[-1,0,1]])
+    horizontal = np.array([[-1,-1,-1],[0,0,0],[1,1,1]])
+    kernels = np.stack([
+        np.stack([vertical,vertical,vertical]),
+        np.stack([horizontal,horizontal,horizontal])
+    ])
+    result = conv2d_multi(image, kernels)
+    print(result.shape)
+    print(result)
+
+if __name__ == "__main__":
+    test_multi()
