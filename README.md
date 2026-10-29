@@ -100,7 +100,7 @@ New folders and files are added when each phase starts.
 - [x] Convolution from scratch in NumPy (`conv2d`)
 - [x] Padding and stride
 - [x] Multiple channels and multiple filters
-- [ ] Activation functions and pooling
+- [x] Activation functions and pooling
 - [ ] First CNN in PyTorch on Fashion-MNIST
 - [ ] Training loop, loss, accuracy, overfitting
 
