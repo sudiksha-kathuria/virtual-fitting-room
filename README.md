@@ -87,12 +87,10 @@ New folders are added when each phase starts.
 
 ## Roadmap
 
-## Roadmap
-
 ### Phase 0: CNN foundations
 - [x] Convolution from scratch in NumPy (`conv2d`)
-- [ ] Padding and stride
-- [ ] Multiple channels and multiple filters
+- [x] Padding and stride
+- [x] Multiple channels and multiple filters
 - [ ] Activation functions and pooling
 - [ ] First CNN in PyTorch on Fashion-MNIST
 - [ ] Training loop, loss, accuracy, overfitting
