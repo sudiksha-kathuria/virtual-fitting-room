@@ -87,6 +87,8 @@ New folders are added when each phase starts.
 
 ## Roadmap
 
+## Roadmap
+
 ### Phase 0: CNN foundations
 - [x] Convolution from scratch in NumPy (`conv2d`)
 - [ ] Padding and stride
@@ -95,11 +97,12 @@ New folders are added when each phase starts.
 - [ ] First CNN in PyTorch on Fashion-MNIST
 - [ ] Training loop, loss, accuracy, overfitting
 
-### Phase 1: Category classifier
+### Phase 1: Category and view classifiers
 - [ ] Collect and clean a wearables dataset
 - [ ] Fine-tune a pretrained model (transfer learning)
 - [ ] Evaluate with a confusion matrix
 - [ ] Save the model
+- [ ] View classifier (front, back, left, right) using transfer learning
 
 ### Phase 2: Garment cutout
 - [ ] Learn segmentation and the U-Net design
@@ -113,7 +116,7 @@ New folders are added when each phase starts.
 - [ ] Evaluate keypoint error
 
 ### Phase 4: Export models
-- [ ] Export all three models to ONNX
+- [ ] Export all models to ONNX (category, view, cutout, keypoints)
 - [ ] Shrink the models for browser speed
 - [ ] Test inference in the browser
 
@@ -121,11 +124,18 @@ New folders are added when each phase starts.
 - [ ] React and Vite setup, camera access
 - [ ] MediaPipe body tracking in the browser
 - [ ] Smoothing
+- [ ] Depth-aware fitting (use MediaPipe z values for turning and distance)
 - [ ] Place an item on the body
 - [ ] Mesh warp using garment keypoints
 - [ ] Arms in front of the item
 - [ ] Lighting and shadow match
 - [ ] Other categories: shoes, hats, glasses, watches
+
+### Phase 5b: Multi-view 3D try-on
+- [ ] Switch and blend front and back views as the user turns
+- [ ] 3D body-shaped surface in Three.js
+- [ ] Add side views and blend the seams
+- [ ] Per-view cutout and keypoints, matched across views
 
 ### Phase 6: Backend
 - [ ] FastAPI project and health check
@@ -138,7 +148,7 @@ New folders are added when each phase starts.
 ### Phase 7: UI polish
 - [ ] Palette and design tokens
 - [ ] Landing page and animations
-- [ ] Catalog, upload flow, saved looks
+- [ ] Catalog, upload flow (guided multi-view upload), saved looks
 - [ ] Photo capture and video recording
 - [ ] Mobile layout
 
@@ -152,6 +162,7 @@ New folders are added when each phase starts.
 ### Phase 9: Stretch
 - [ ] Size suggestions from body proportions
 - [ ] Share links for saved looks
+- [ ] Depth CNN to estimate the garment's surface shape
 - [ ] Better fit using 3D or generative methods
 
 ## Privacy
