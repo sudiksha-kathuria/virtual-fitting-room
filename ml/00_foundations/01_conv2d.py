@@ -76,5 +76,11 @@ def test_multi():
     print(result.shape)
     print(result)
 
+def relu(x):
+    return np.maximum(x,0)
+
+#def test_relu_simple():
+#    print(relu(np.array([[-2, 5], [0, -7]])))
+
 if __name__ == "__main__":
     test_multi()
