@@ -22,11 +22,11 @@ def conv2d_multi(image,kernels):
     total_channels = image.shape[0]
     img_h = image.shape[1]
     img_w = image.shape[2]
-    kernel_h = kernels.shape[2]
+    kernels_h = kernels.shape[2]
     kernels_w = kernels.shape[3]
     output_h = img_h - kernels_h + 1
     output_w = img_w - kernels_w + 1
-    output = np.zeros(total_filters, output_h, output_w)
+    output = np.zeros((total_filters, output_h, output_w))
     for f in range(total_filters):
         for c in range(total_channels):
             output[f] = output[f] + conv2d(image[c], kernels[f,c])
@@ -42,6 +42,11 @@ def read_grid(name):
             break
         rows.append([float(x) for x in line.split()])
     return np.array(rows)
+
+def read_image():
+    channels = int(input("Enter the number of channels: "))
+    sheets = [read_grid(f"channel {i}") for i in range(channels)]
+    return np.stack(sheets)
 
 def test_single():
     image = read_grid("image")
