@@ -76,14 +76,23 @@ The backend never receives video frames. It only handles login and saved files.
 virtual-fitting-room/
 ├── README.md
 ├── .gitignore
-├── ml/                 CNN and computer vision training (Python)
+├── ml/                          CNN and computer vision training (Python)
 │   ├── requirements.txt
-│   └── 00_foundations/
-├── backend/            planned: FastAPI, Google login, RDS, S3
-└── frontend/           planned: React, MediaPipe, PixiJS
+│   ├── foundations/             convolution, ReLU and pooling from scratch
+│   │   └── conv2d.py
+│   ├── tests/                   checks for the code above
+│   │   ├── helpers.py
+│   │   ├── test_conv2d.py
+│   │   └── manual_conv2d.py
+│   ├── classifier/              planned: category and view classifiers
+│   ├── cutout/                  planned: U-Net garment cutout
+│   ├── keypoints/               planned: garment keypoint network
+│   └── export/                  planned: ONNX export
+├── backend/                     planned: FastAPI, Google login, RDS, S3
+└── frontend/                    planned: React, MediaPipe, PixiJS, Three.js
 ```
 
-New folders are added when each phase starts.
+New folders and files are added when each phase starts.
 
 ## Roadmap
 
@@ -183,6 +192,12 @@ cd ml
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
+
+Run the tests (from `ml/`, with the venv active):
+
+```bash
+python3 -m tests.test_conv2d
 ```
 
 Backend and frontend setup will be added in their phases.
