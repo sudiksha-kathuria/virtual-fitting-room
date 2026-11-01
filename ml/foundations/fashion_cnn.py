@@ -1,3 +1,7 @@
+"""
+This part was written for learning purposes, code was tested on small parts for better understanding.
+
+
 import torch
 import torch.nn as nn
 from torchvision import datasets,transforms
@@ -30,3 +34,4 @@ class FashionCNN(nn.Module):
 
 model=FashionCNN()
 model(images)
+"""
