@@ -101,7 +101,7 @@ New folders and files are added when each phase starts.
 - [x] Padding and stride
 - [x] Multiple channels and multiple filters
 - [x] Activation functions and pooling
-- [x] First CNN in PyTorch on Fashion-MNIST
+- [ ] First CNN in PyTorch on Fashion-MNIST
 - [ ] Training loop, loss, accuracy, overfitting
 
 ### Phase 1: Category and view classifiers
