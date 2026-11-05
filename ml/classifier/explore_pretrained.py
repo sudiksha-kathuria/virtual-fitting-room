@@ -4,7 +4,7 @@ model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
 print(model.fc)
 print("total weights:", sum(p.numel() for p in model.parameters()))
 for p in model.parameters():
-    p.requires_grad = False       #freeze everything  
-model.fc = nn.Linear(512, 5)      #final layer for 5 categories 
+    p.requires_grad = False       # freeze everything  
+model.fc = nn.Linear(512, 5)      # final layer for 5 categories 
 trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
 print("trainable weights:", trainable)
