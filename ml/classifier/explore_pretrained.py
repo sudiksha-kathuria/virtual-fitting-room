@@ -6,9 +6,9 @@ print(model.fc)
 print("total weights:", sum(p.numel() for p in model.parameters()))
 
 for p in model.parameters():
-    p.requires_grad = False         # BLANK 1: freeze everything
+    p.requires_grad = False         
 
-model.fc = nn.Linear(512, 5)        # BLANK 2: new final layer for 5 categories
+model.fc = nn.Linear(512, 5)        
 
 trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
 print("trainable weights:", trainable)
