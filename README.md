@@ -209,4 +209,4 @@ Backend and frontend setup will be added in their phases.
 
 ## Contributors
 
-Sudiksha Kathuria
+Sudiksha Kathuri
